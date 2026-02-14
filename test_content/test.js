@@ -7,7 +7,7 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './po
 
 
 (async () => {
-  console.info('Starting test...<br />');
+  console.info('<br />Starting test...<br />');
 
   console.warn(`🧑‍🦱 You're asking Wizard for a ${nameof(BasicPotion)}...`);
   let potion_1 = await Wizard.craftPotion(nameof(BasicPotion), [], [`${Matcher.entag("foo")}`]);

@@ -1,4 +1,4 @@
-# 🧪 brewery - The Potions Brewery
+# 🧪 Potions Brewery
 
 *A dynamic object factory disguised as arcane craftsmanship.*
 

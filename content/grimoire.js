@@ -10,7 +10,7 @@ export class Grimoire {
     let potionName = nameof(potion);
     if (this.#_index.has(potionName)) {
       if (!overwrite) {
-        console.warn(`${potionName} already exists in Grimoire!`);
+        console.error(`${potionName} already exists in Grimoire!`);
         return;
       }
       console.warn(`${potionName} is being overwritten in Grimoire.`);
@@ -19,6 +19,7 @@ export class Grimoire {
     if (Is.thisSomething(recipe)) {
       this.#_recipes.set(potionName, recipe);
     }
+    console.log(`🧪 ${potionName} has been etched into the sacred tome.`);
   }
   static getArchetype(potionName) {
     return this.#_index.get(potionName);

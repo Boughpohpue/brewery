@@ -77,15 +77,14 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './po
   		}
   	]
   }`;
-  console.log(JSON.parse(scroll));
+  console.warn(JSON.parse(scroll));
 
-  console.warn(`<br />🎇 It revealed long forgotten legends!`);
+  console.warn(`<br />🎇 Long forgotten legends has been revealed!`);
   const legends = Legend.fromJson(scroll);
   const legendaryNames = [];
   for (const legend of legends) {
     const legendary = legend.getArchetype();
     Grimoire.inscribe(legendary, legend.getRecipe());
-    console.log(`🧪 ${nameof(legendary)} has been etched into the sacred tome`);
     legendaryNames.push(nameof(legendary));
   }
 

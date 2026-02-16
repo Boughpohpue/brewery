@@ -1,4 +1,4 @@
-import { nameof, Matcher } from '../compiled/just.js-1.0.1.js';
+import { nameof, Matcher } from 'https://boughpohpue.github.io/just.js/compiled/just.js-1.0.1.js';
 import { Legend, Grimoire, CustomSupply, Wizard } from '../compiled/brewery-1.0.1.js';
 import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './potions.js';
 

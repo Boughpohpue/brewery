@@ -1,4 +1,4 @@
-import { nameof, Matcher } from '../content/.external/just.js-1.0.1.js';
+import { nameof, Matcher } from 'https://boughpohpue.github.io/just.js/compiled/just.js-1.0.1.js';
 import Legend from '../content/legend.js';
 import CustomSupply from '../content/custom_supply.js';
 import Grimoire from '../content/grimoire.js';

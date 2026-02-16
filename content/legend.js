@@ -1,4 +1,4 @@
-import { Is } from './.external/just.js-1.0.1.js';
+import { Is } from 'https://boughpohpue.github.io/just.js/compiled/just.js-1.0.1.js';
 import Rune from './rune.js';
 import Ingredient from './ingredient.js';
 import Recipe from './recipe.js';

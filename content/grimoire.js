@@ -1,4 +1,4 @@
-import { nameof, Is } from './.external/just.js-1.0.1.js';
+import { nameof, Is } from 'https://boughpohpue.github.io/just.js/compiled/just.js-1.0.1.js';
 
 export class Grimoire {
   static #_index = new Map();

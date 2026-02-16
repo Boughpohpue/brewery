@@ -79,7 +79,7 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './po
   }`;
   console.warn(JSON.parse(scroll));
 
-  console.warn(`<br />🎇 Long forgotten legends has been revealed!`);
+  console.warn(`<br />✨ Long forgotten legends has been revealed!`);
   const legends = Legend.fromJson(scroll);
   const legendaryNames = [];
   for (const legend of legends) {

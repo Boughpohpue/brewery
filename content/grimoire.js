@@ -19,7 +19,7 @@ export class Grimoire {
     if (Is.thisSomething(recipe)) {
       this.#_recipes.set(potionName, recipe);
     }
-    console.log(`🧪 ${potionName} has been etched into the sacred tome.`);
+    console.log(`🧪 ${potionName} has been etched into the Grimoire.`);
   }
   static getArchetype(potionName) {
     return this.#_index.get(potionName);

@@ -1,30 +1,30 @@
 import { nameof, Matcher } from 'https://boughpohpue.github.io/just.js/compiled/just.js-1.0.1.js';
 import { Legend, Grimoire, CustomSupply, Wizard } from '../compiled/brewery-1.0.1.js';
-import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './potions.js';
+import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './test_potions.js';
 
 
 (async () => {
-  console.info('<br />Starting test...<br />');
+  console.info('\n\nStarting test...\n');
 
   console.warn(`🧑‍🦱 You're asking Wizard for a ${nameof(BasicPotion)}...`);
   let potion_1 = await Wizard.craftPotion(nameof(BasicPotion), [], [`${Matcher.entag("foo")}`]);
-  console.warn(`🧪 ${nameof({ potion_1 })} is a ${nameof(potion_1)}<br />`);
+  console.warn(`🧪 ${nameof({ potion_1 })} is a ${nameof(potion_1)}\n`);
 
   console.warn(`🧑‍🦱 You're asking Wizard for a ${nameof(PanoramixSpecial)}...`);
   let potion_2 = await Wizard.craftPotion(nameof(PanoramixSpecial), [], [`${Matcher.entag("foo")}`]);
-  console.warn(`🧪 ${nameof({ potion_2 })} is a ${nameof(potion_2)}<br />`);
+  console.warn(`🧪 ${nameof({ potion_2 })} is a ${nameof(potion_2)}\n`);
 
   console.warn(`🧑‍🦱 You're asking Wizard for a ${nameof(GummiberryJuice)}...`);
   let potion_3 = await Wizard.craftPotion(nameof(GummiberryJuice), [], [`${Matcher.entag("foo")}`, `${Matcher.entag("bar")}`]);
-  console.warn(`🧪 ${nameof({ potion_3 })} is a ${nameof(potion_3)}<br />`);
+  console.warn(`🧪 ${nameof({ potion_3 })} is a ${nameof(potion_3)}\n`);
 
-  console.warn(`🧑‍🦱 You're asking Wizard for a ${nameof(GummiberryJuice)}...`);
+  console.warn(`🧑‍🦱 You're asking Wizard for a ${nameof(GummiberryJuice)} using your custom supplies...`);
   let potion_4 = await Wizard.craftPotion(
     nameof(GummiberryJuice),
     [new CustomSupply("foo", 369), new CustomSupply("bar", "sTupiT igTHorN")],
     [`${Matcher.entag("foo")}`, `${Matcher.entag("bar")}`]
   );
-  console.warn(`🧪 ${nameof({ potion_4 })} is a ${nameof(potion_4)}<br />`);
+  console.warn(`🧪 ${nameof({ potion_4 })} is a ${nameof(potion_4)}\n`);
 
   console.warn(`🧑‍🦱 You're asking Wizard for a ${nameof(LovePotion)}...`);
   let potion_5 = await Wizard.craftPotion(
@@ -39,9 +39,10 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './po
       `💗 Their love shall last forever. ${Matcher.entag("enchant")}`,
     ]
   );
-  console.warn(`🧪 ${nameof({ potion_5 })} is a ${nameof(potion_5)}<br />`);
+  console.warn(`🧪 ${nameof({ potion_5 })} is a ${nameof(potion_5)}\n`);
 
-  console.warn(`‍<br/ >📜 You have found an old weathered scroll...`);
+
+  console.warn(`\n📜 You have found an old weathered scroll...`);
   const scroll = `
   {
   	"legends": [
@@ -55,7 +56,7 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './po
   				},
   				{
   					"key": "bar",
-  					"value": "I feel lucky",
+  					"value": "I feel lucky 🤪",
   					"attributes": "ParameterStuff|String"
   				}
   			]
@@ -65,21 +66,21 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './po
   			"runes": [
   				{
   					"key": "foo",
-  					"value": "It's a hair!",
-  					"attributes": "ParameterStuff|String"
+  					"value": 12369,
+  					"attributes": "ParameterStuff|Number"
   				},
   				{
   					"key": "bar",
-  					"value": 12369,
-  					"attributes": "ParameterStuff|Number"
+  					"value": "It's a hair! 🤮",
+  					"attributes": "ParameterStuff|String"
   				}
   			]
   		}
   	]
   }`;
-  console.warn(JSON.parse(scroll));
+  console.warn(JSON.parse(scroll), { style: "color: antiquewhite;" });
 
-  console.warn(`<br />✨ Long forgotten legends has been revealed!`);
+  console.warn(`\n✨ Long forgotten legends has been revealed!`);
   const legends = Legend.fromJson(scroll);
   const legendaryNames = [];
   for (const legend of legends) {
@@ -87,13 +88,21 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './po
     Grimoire.inscribe(legendary, legend.getRecipe());
     legendaryNames.push(nameof(legendary));
   }
+  console.warn(`📙 The Sacred Tome hums softly... legendary formulas are ready to be brewed!\n`);
 
-  console.warn(`📙 The Grimoire hums softly... legendary formulas await their awakening<br />`);
   for (const legendaryName of legendaryNames) {
     console.warn(`🧑‍🦱 You're asking Wizard for a ${legendaryName}...`);
     let legendaryPotion = await Wizard.craftPotion(legendaryName, [], [`${Matcher.entag("foo")}`, `${Matcher.entag("bar")}`]);
-    console.warn(`🧪 ${nameof({ legendaryPotion })} is a ${nameof(legendaryPotion)}<br />`);
+    console.warn(`🧪 ${nameof({ legendaryPotion })} is a ${nameof(legendaryPotion)}\n`);
+  }
+  for (const legendaryName of legendaryNames) {
+    console.warn(`🧑‍🦱 You're asking Wizard for a ${legendaryName} using your custom supplies...`);
+    let legendaryPotion = await Wizard.craftPotion(
+      legendaryName,
+      [new CustomSupply("foo", 369), new CustomSupply("bar", `My own ${legendaryName}!`)],
+      [`${Matcher.entag("foo")} just for me 🤩`, `${Matcher.entag("bar")} just for me 😁`]);
+    console.warn(`🧪 ${nameof({ legendaryPotion })} is a ${nameof(legendaryPotion)}\n`);
   }
 
-  console.info('Test complete!<br />');
+  console.info('\nTest complete!\n');
 })();

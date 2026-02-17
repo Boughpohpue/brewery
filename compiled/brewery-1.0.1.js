@@ -189,7 +189,7 @@ export class Grimoire {
     if (Is.thisSomething(recipe)) {
       this.#_recipes.set(potionName, recipe);
     }
-    console.log(`🧪 ${potionName} has been etched into the sacred tome.`);
+    console.log(`🧪 ${potionName} has been etched into the Grimoire.`);
   }
   static getArchetype(potionName) {
     return this.#_index.get(potionName);
@@ -248,13 +248,15 @@ export class Wizard {
   static brewPotion(potionName, supplies = null) {
     const brewPotionJob = () => this.#brewPotionJob(potionName, supplies);
     this.#todo = this.#todo.then(brewPotionJob, brewPotionJob);
-    console.log(`🧙‍♂️ Wizard says: 👍 Agree, I shall brew the ${potionName} for you.`);
+    let customStr = supplies === null || supplies.length === 0 ? "the" : "customized";
+    console.log(`🧙‍♂️ Wizard says: 👍 Agree, I shall brew ${customStr} ${potionName} for you.`);
     return this.#todo;
   }
   static craftPotion(potionName, supplies = null, chants = null) {
     const craftPotionJob = () => this.#craftPotionJob(potionName, supplies, chants);
     this.#todo = this.#todo.then(craftPotionJob, craftPotionJob);
-    console.log(`🧙‍♂️ Wizard says: 👍 Agree, I shall craft the ${potionName} for you.`);
+    let customStr = supplies === null || supplies.length === 0 ? "the" : "customized";
+    console.log(`🧙‍♂️ Wizard says: 👍 Agree, I shall craft ${customStr} ${potionName} for you.`);
     return this.#todo;
   }
   static enchantPotion(potion, chants = null) {

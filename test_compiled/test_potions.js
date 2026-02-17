@@ -3,6 +3,8 @@ import { IngredientAttributes, Ingredient, Recipe, Grimoire } from '../compiled/
 
 /* POTIONS */
 
+console.info('Defining test potions...');
+
 export class BasicPotion {
   static _foo = 12;
   constructor() {}
@@ -10,6 +12,7 @@ export class BasicPotion {
     return this.constructor._foo;
   }
 }
+console.log(`\n${BasicPotion.toString()}`, { style: "color: gold;" });
 Grimoire.inscribe(BasicPotion);
 
 export class PanoramixSpecial {
@@ -18,6 +21,7 @@ export class PanoramixSpecial {
     this.foo = foo;
   }
 }
+console.log(`\n${PanoramixSpecial.toString()}`, { style: "color: gold;" });
 Grimoire.inscribe(
   PanoramixSpecial,
   new Recipe([new Ingredient(IngredientAttributes.ParameterStuff | IngredientAttributes.Number, "foo", 144)])
@@ -31,6 +35,7 @@ export class GummiberryJuice {
     this.bar = bar;
   }
 }
+console.log(`\n${GummiberryJuice.toString()}`, { style: "color: gold;" });
 Grimoire.inscribe(
   GummiberryJuice,
   new Recipe([
@@ -49,6 +54,7 @@ export class LovePotion {
     this.to = to;
   }
 }
+console.log(`\n${LovePotion.toString()}`, { style: "color: gold;" });
 Grimoire.inscribe(
   LovePotion,
   new Recipe([
@@ -57,5 +63,7 @@ Grimoire.inscribe(
     new Ingredient(IngredientAttributes.ParameterStuff | IngredientAttributes.String, "enchant", "_enchant"),
   ])
 );
+
+console.info('\nTest potions has been defined!\n');
 
 /* *** * *** */

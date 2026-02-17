@@ -7,13 +7,15 @@ export class Wizard {
   static brewPotion(potionName, supplies = null) {
     const brewPotionJob = () => this.#brewPotionJob(potionName, supplies);
     this.#todo = this.#todo.then(brewPotionJob, brewPotionJob);
-    console.log(`🧙‍♂️ Wizard says: 👍 Agree, I shall brew the ${potionName} for you.`);
+    let customStr = supplies === null ? "the" : "customized";
+    console.log(`🧙‍♂️ Wizard says: 👍 Agree, I shall brew ${customStr} ${potionName} for you.`);
     return this.#todo;
   }
   static craftPotion(potionName, supplies = null, chants = null) {
     const craftPotionJob = () => this.#craftPotionJob(potionName, supplies, chants);
     this.#todo = this.#todo.then(craftPotionJob, craftPotionJob);
-    console.log(`🧙‍♂️ Wizard says: 👍 Agree, I shall craft the ${potionName} for you.`);
+    let customStr = supplies === null ? "the" : "customized";
+    console.log(`🧙‍♂️ Wizard says: 👍 Agree, I shall craft ${customStr} ${potionName} for you.`);
     return this.#todo;
   }
   static enchantPotion(potion, chants = null) {

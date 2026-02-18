@@ -29,4 +29,4 @@ export class Grimoire {
   }
 }
 
-export default CookBook;
+export default Grimoire;

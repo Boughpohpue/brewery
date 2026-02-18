@@ -8,6 +8,8 @@ import Grimoire from '../content/grimoire.js';
 
 console.info('Defining test potions...');
 
+const styleMap = new Map([["style", "color: goldenrod;"]])
+
 export class BasicPotion {
   static _foo = 12;
   constructor() {}
@@ -15,7 +17,7 @@ export class BasicPotion {
     return this.constructor._foo;
   }
 }
-console.log(`\n${BasicPotion.toString()}`, { style: "color: gold;" });
+console.log(`\n${BasicPotion.toString()}`, styleMap);
 Grimoire.inscribe(BasicPotion);
 
 export class PanoramixSpecial {
@@ -24,7 +26,7 @@ export class PanoramixSpecial {
     this.foo = foo;
   }
 }
-console.log(`\n${PanoramixSpecial.toString()}`, { style: "color: gold;" });
+console.log(`\n${PanoramixSpecial.toString()}`, styleMap);
 Grimoire.inscribe(
   PanoramixSpecial,
   new Recipe([new Ingredient(IngredientAttributes.ParameterStuff | IngredientAttributes.Number, "foo", 144)])
@@ -38,7 +40,7 @@ export class GummiberryJuice {
     this.bar = bar;
   }
 }
-console.log(`\n${GummiberryJuice.toString()}`, { style: "color: gold;" });
+console.log(`\n${GummiberryJuice.toString()}`, styleMap);
 Grimoire.inscribe(
   GummiberryJuice,
   new Recipe([
@@ -57,7 +59,7 @@ export class LovePotion {
     this.to = to;
   }
 }
-console.log(`\n${LovePotion.toString()}`, { style: "color: gold;" });
+console.log(`\n${LovePotion.toString()}`, styleMap);
 Grimoire.inscribe(
   LovePotion,
   new Recipe([

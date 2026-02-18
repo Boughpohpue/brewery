@@ -4,7 +4,7 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './te
 
 
 (async () => {
-  console.info('\n\nStarting test...\n');
+  console.info('\nStarting test...\n');
 
   console.warn(`🧑‍🦱 You're asking Wizard for a ${nameof(BasicPotion)}...`);
   let potion_1 = await Wizard.craftPotion(nameof(BasicPotion), [], [`${Matcher.entag("foo")}`]);
@@ -56,7 +56,7 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './te
   				},
   				{
   					"key": "bar",
-  					"value": "I feel lucky 🤪",
+  					"value": "I feel lucky",
   					"attributes": "ParameterStuff|String"
   				}
   			]
@@ -71,14 +71,14 @@ import { BasicPotion, PanoramixSpecial, GummiberryJuice, LovePotion } from './te
   				},
   				{
   					"key": "bar",
-  					"value": "It's a hair! 🤮",
+  					"value": "It's a hair! Eww!",
   					"attributes": "ParameterStuff|String"
   				}
   			]
   		}
   	]
   }`;
-  console.warn(JSON.parse(scroll), { style: "color: antiquewhite;" });
+  console.warn(JSON.stringify(JSON.parse(scroll), null, 2), new Map([["style", "color: antiquewhite; text-shadow: 3px 3px #708090;"]]));
 
   console.warn(`\n✨ Long forgotten legends has been revealed!`);
   const legends = Legend.fromJson(scroll);

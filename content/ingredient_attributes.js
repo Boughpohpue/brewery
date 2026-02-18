@@ -1,4 +1,4 @@
-import Is from from 'https://boughpohpue.github.io/just.js/compiled/just.js-1.0.1.js';
+import Is from 'https://boughpohpue.github.io/just.js/compiled/just.js-1.0.1.js';
 
 export class IngredientAttributes {
   static None = 0n;

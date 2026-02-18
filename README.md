@@ -234,4 +234,9 @@ Follow the link and see **Potions Brewery** in action:
 
 https://boughpohpue.github.io/brewery/test_compiled/test.html
 
+
+🤔 Check out **TestingConsole** - lightweight browser-based testing console for JS developers:
+
+https://github.com/Boughpohpue/testing_console.js
+
 ---
